@@ -1,0 +1,4 @@
+semantic_type Money {
+  canonical_label "money"
+  primitive_envelope Money
+}

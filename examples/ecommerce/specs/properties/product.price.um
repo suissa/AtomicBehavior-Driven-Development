@@ -1,0 +1,19 @@
+property Product.price {
+  canonical_label "product.price"
+  semantic_type Money
+  primitive_envelope Money
+
+  required true
+
+  // no normalizer declared
+  validator ConstructMoney
+  validator RefuteNegativeMoney
+
+  refutation NegativeMoney
+  refutation MissingCurrency
+
+  event ProductPrice.success
+  event ProductPrice.error
+
+  test_oracle ProductPriceTestOracle
+}

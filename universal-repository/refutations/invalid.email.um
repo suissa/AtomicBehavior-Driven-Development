@@ -1,0 +1,3 @@
+refutation InvalidEmailFormat {
+  canonical_label "invalid.email.format"
+}

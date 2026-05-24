@@ -1,0 +1,18 @@
+property Order.total {
+  canonical_label "order.total"
+  semantic_type Money
+  primitive_envelope Money
+
+  required true
+
+  // no normalizer declared
+  validator CalculateOrderTotal
+  validator RefuteNegativeMoney
+
+  refutation NegativeMoney
+
+  event OrderTotal.success
+  event OrderTotal.error
+
+  test_oracle OrderTotalTestOracle
+}

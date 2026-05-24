@@ -1,0 +1,3 @@
+refutation InvalidCPFChecksum {
+  canonical_label "invalid.cpf.checksum"
+}

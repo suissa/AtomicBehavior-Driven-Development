@@ -1,0 +1,11 @@
+config {
+  mode beginner
+
+  beginner {
+    language TypeScript
+    frontend NextJS
+    backend NestJS
+    database PostgreSQL
+    architecture modular_monolith
+  }
+}

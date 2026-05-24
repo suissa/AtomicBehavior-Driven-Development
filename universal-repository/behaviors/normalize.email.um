@@ -1,0 +1,3 @@
+behavior NormalizeUserEmail {
+  canonical_label "normalize.user.email"
+}

@@ -1,0 +1,3 @@
+behavior ValidateUserEmailFormat {
+  canonical_label "validate.user.email.format"
+}

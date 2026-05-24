@@ -1,0 +1,4 @@
+semantic_type EntityId {
+  canonical_label "entity.id"
+  primitive_envelope UUID
+}

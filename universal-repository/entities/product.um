@@ -1,0 +1,4 @@
+entity Product {
+  canonical_label "product"
+  domain "commerce"
+}

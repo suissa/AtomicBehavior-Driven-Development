@@ -1,0 +1,4 @@
+entity User {
+  canonical_label "user"
+  domain "commerce"
+}

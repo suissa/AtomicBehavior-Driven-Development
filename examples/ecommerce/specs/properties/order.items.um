@@ -1,0 +1,18 @@
+property Order.items {
+  canonical_label "order.items"
+  semantic_type OrderItems
+  primitive_envelope Word
+
+  required true
+
+  // no normalizer declared
+  validator ConstructOrderItems
+  validator RefuteOrderWithoutItems
+
+  refutation OrderWithoutItems
+
+  event OrderItems.success
+  event OrderItems.error
+
+  test_oracle OrderItemsTestOracle
+}

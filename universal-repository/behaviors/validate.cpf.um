@@ -1,0 +1,3 @@
+behavior ValidateCPF {
+  canonical_label "validate.cpf"
+}

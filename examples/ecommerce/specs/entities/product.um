@@ -1,0 +1,16 @@
+entity Product {
+  canonical_label "product"
+  domain "commerce"
+
+  property id uses EntityId
+  property name uses ProductName
+  property price uses Money
+
+  behavior CreateProduct
+  behavior PriceProduct
+
+  emits ProductId.success
+  emits ProductName.success
+  emits ProductPrice.success
+  emits ProductPrice.error
+}

@@ -1,0 +1,23 @@
+test Order {
+  target entity Order
+
+  property id {
+    positive valid_uuid
+    negative empty_id expects EmptyId
+  }
+
+  property items {
+    positive valid_order_items
+    negative order_without_items expects OrderWithoutItems
+  }
+
+  property total {
+    positive valid_order_total
+    negative negative_money expects NegativeMoney
+  }
+
+  property user {
+    positive valid_user_ref
+    negative missing_user_ref expects MissingUserRef
+  }
+}

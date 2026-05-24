@@ -1,0 +1,4 @@
+semantic_type UserPhone {
+  canonical_label "user.phone"
+  primitive_envelope Word(Number)
+}

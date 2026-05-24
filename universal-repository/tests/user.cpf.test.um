@@ -1,0 +1,4 @@
+test UserCPF {
+  positive valid_cpf
+  negative invalid_checksum expects InvalidCPFChecksum
+}

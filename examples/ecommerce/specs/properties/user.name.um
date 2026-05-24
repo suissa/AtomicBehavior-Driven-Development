@@ -1,0 +1,16 @@
+property User.name {
+  canonical_label "user.name"
+  semantic_type UserName
+  primitive_envelope Word
+
+  required true
+
+  normalizer NormalizeUserName
+  validator RefuteEmptyUserName
+
+  refutation EmptyUserName
+
+  event UserName.success
+
+  test_oracle UserNameTestOracle
+}

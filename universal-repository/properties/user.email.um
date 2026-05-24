@@ -1,0 +1,5 @@
+property User.email {
+  canonical_label "user.email"
+  semantic_type UserEmail
+  primitive_envelope Word(Email)
+}

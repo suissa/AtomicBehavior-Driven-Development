@@ -1,0 +1,56 @@
+{
+  "mode": "beginner",
+  "projectName": "examples\\ecommerce",
+  "summary": "Modular monolith projection plan generated from ABDD semantic graph.",
+  "targets": [
+    {
+      "name": "frontend",
+      "kind": "NextJS",
+      "files": [
+        "app/forms/Order.id.tsx",
+        "app/forms/Order.items.tsx",
+        "app/forms/Order.total.tsx",
+        "app/forms/Order.user.tsx",
+        "app/forms/Payment.amount.tsx",
+        "app/forms/Payment.id.tsx",
+        "app/forms/Payment.status.tsx",
+        "app/forms/Product.id.tsx",
+        "app/forms/Product.name.tsx",
+        "app/forms/Product.price.tsx",
+        "app/forms/User.cpf.tsx",
+        "app/forms/User.email.tsx",
+        "app/forms/User.id.tsx",
+        "app/forms/User.name.tsx",
+        "app/forms/User.phone.tsx"
+      ],
+      "notes": [
+        "forms and client validators are generated from SemanticTypes"
+      ]
+    },
+    {
+      "name": "backend",
+      "kind": "NestJS",
+      "files": [
+        "src/modules/Order/index.ts",
+        "src/modules/Payment/index.ts",
+        "src/modules/Product/index.ts",
+        "src/modules/User/index.ts"
+      ],
+      "notes": [
+        "DTOs, services and ports are generated from entity specs"
+      ]
+    },
+    {
+      "name": "database",
+      "kind": "PostgreSQL",
+      "files": [
+        "prisma/schema.prisma",
+        "migrations/0001_init.sql"
+      ],
+      "notes": [
+        "constraints are derived from property refutations and primitive envelopes"
+      ]
+    }
+  ],
+  "generatedAt": "2026-05-24T06:16:49.697Z"
+}

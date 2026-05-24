@@ -1,0 +1,19 @@
+property Payment.amount {
+  canonical_label "payment.amount"
+  semantic_type Money
+  primitive_envelope Money
+
+  required true
+
+  // no normalizer declared
+  validator ConstructMoney
+  validator RefuteNegativeMoney
+
+  refutation NegativeMoney
+  refutation MissingCurrency
+
+  event PaymentAmount.success
+  event PaymentAmount.error
+
+  test_oracle PaymentAmountTestOracle
+}

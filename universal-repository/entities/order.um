@@ -1,0 +1,4 @@
+entity Order {
+  canonical_label "order"
+  domain "commerce"
+}

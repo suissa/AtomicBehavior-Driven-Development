@@ -1,0 +1,4 @@
+entity Payment {
+  canonical_label "payment"
+  domain "commerce"
+}

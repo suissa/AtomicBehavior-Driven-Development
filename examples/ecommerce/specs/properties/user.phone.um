@@ -1,0 +1,17 @@
+property User.phone {
+  canonical_label "user.phone"
+  semantic_type UserPhone
+  primitive_envelope Word(Number)
+
+  required false
+
+  normalizer NormalizePhone
+  validator ValidatePhoneLength
+
+  refutation InvalidPhoneLength
+
+  event UserPhone.success
+  event UserPhone.error
+
+  test_oracle UserPhoneTestOracle
+}

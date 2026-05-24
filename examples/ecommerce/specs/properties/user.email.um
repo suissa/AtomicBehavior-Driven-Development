@@ -1,0 +1,19 @@
+property User.email {
+  canonical_label "user.email"
+  semantic_type UserEmail
+  primitive_envelope Word(Email)
+
+  required true
+
+  normalizer NormalizeUserEmail
+  validator ValidateUserEmailFormat
+  validator ConstructUserEmail
+
+  refutation EmptyEmail
+  refutation InvalidEmailFormat
+
+  event UserEmail.success
+  event UserEmail.error
+
+  test_oracle UserEmailTestOracle
+}

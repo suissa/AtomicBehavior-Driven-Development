@@ -1,0 +1,18 @@
+property Payment.status {
+  canonical_label "payment.status"
+  semantic_type PaymentStatus
+  primitive_envelope Word
+
+  required true
+
+  // no normalizer declared
+  validator SetPaymentStatus
+  validator RefuteUnknownPaymentStatus
+
+  refutation UnknownPaymentStatus
+
+  event PaymentStatus.success
+  event PaymentStatus.error
+
+  test_oracle PaymentStatusTestOracle
+}

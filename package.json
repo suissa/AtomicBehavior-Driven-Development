@@ -1,0 +1,37 @@
+{
+  "name": "piaget-freinet-abdd-builder",
+  "version": "0.1.0",
+  "description": "Piaget Freinet: AtomicBehavior-Driven Development Builder CLI",
+  "type": "module",
+  "bin": {
+    "abdd": "./dist/src/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli/index.ts",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "validate:example": "node dist/src/cli/index.js validate --project examples/ecommerce",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "keywords": [
+    "abdd",
+    "atomicbehavior",
+    "semantic-types",
+    "code-generation",
+    "dsl"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fuse.js": "^7.0.0",
+    "prompts": "^2.4.2",
+    "yaml": "^2.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}

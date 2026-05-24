@@ -1,0 +1,34 @@
+test User {
+  target entity User
+
+  property cpf {
+    positive valid_cpf
+    negative empty_cpf expects EmptyCPF
+    negative insufficient_digits expects InsufficientDigits
+    negative invalid_cpf_length expects InvalidCPFLength
+    negative repeated_digits expects RepeatedCPFSequence
+    negative invalid_checksum expects InvalidCPFChecksum
+    healing removable_non_digits expects UserCPF.healed
+  }
+
+  property email {
+    positive valid_email
+    negative empty_email expects EmptyEmail
+    negative invalid_email_format expects InvalidEmailFormat
+  }
+
+  property id {
+    positive valid_uuid
+    negative empty_id expects EmptyId
+  }
+
+  property name {
+    positive valid_user_name
+    negative empty_user_name expects EmptyUserName
+  }
+
+  property phone {
+    positive valid_phone
+    negative invalid_phone_length expects InvalidPhoneLength
+  }
+}

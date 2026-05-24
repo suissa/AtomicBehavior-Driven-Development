@@ -1,0 +1,11 @@
+project examples\ecommerce {
+  domain commerce
+  system_type ecommerce
+
+  entity Order
+  entity Payment
+  entity Product
+  entity User
+
+  mode beginner
+}

@@ -1,0 +1,26 @@
+property User.cpf {
+  canonical_label "user.cpf"
+  semantic_type UserCPF
+  primitive_envelope Word(Number)
+
+  required true
+
+  normalizer ExtractDigitsFromCPF
+  validator ValidateCPFLength
+  validator RefuteRepeatedDigits
+  validator ValidateCPFChecksumDigit1
+  validator ValidateCPFChecksumDigit2
+  validator ConstructUserCPF
+
+  refutation EmptyCPF
+  refutation InsufficientDigits
+  refutation InvalidCPFLength
+  refutation RepeatedCPFSequence
+  refutation InvalidCPFChecksum
+
+  event UserCPF.success
+  event UserCPF.error
+  event UserCPF.healed
+
+  test_oracle UserCPFTestOracle
+}

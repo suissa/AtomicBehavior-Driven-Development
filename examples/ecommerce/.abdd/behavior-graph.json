@@ -1,0 +1,1061 @@
+{
+  "nodes": [
+    {
+      "id": "entity:Order",
+      "label": "Order",
+      "kind": "entity"
+    },
+    {
+      "id": "property:Order.id",
+      "label": "Order.id",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:GenerateEntityId",
+      "label": "GenerateEntityId",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteEmptyId",
+      "label": "RefuteEmptyId",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:EmptyId",
+      "label": "EmptyId",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:OrderId.success",
+      "label": "OrderId.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:OrderIdTestOracle",
+      "label": "OrderIdTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Order.items",
+      "label": "Order.items",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:ConstructOrderItems",
+      "label": "ConstructOrderItems",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteOrderWithoutItems",
+      "label": "RefuteOrderWithoutItems",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:OrderWithoutItems",
+      "label": "OrderWithoutItems",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:OrderItems.success",
+      "label": "OrderItems.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:OrderItems.error",
+      "label": "OrderItems.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:OrderItemsTestOracle",
+      "label": "OrderItemsTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Order.total",
+      "label": "Order.total",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:CalculateOrderTotal",
+      "label": "CalculateOrderTotal",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteNegativeMoney",
+      "label": "RefuteNegativeMoney",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:NegativeMoney",
+      "label": "NegativeMoney",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:OrderTotal.success",
+      "label": "OrderTotal.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:OrderTotal.error",
+      "label": "OrderTotal.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:OrderTotalTestOracle",
+      "label": "OrderTotalTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Order.user",
+      "label": "Order.user",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:BindOrderToUser",
+      "label": "BindOrderToUser",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteMissingUserRef",
+      "label": "RefuteMissingUserRef",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:MissingUserRef",
+      "label": "MissingUserRef",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:OrderUser.success",
+      "label": "OrderUser.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:OrderUserTestOracle",
+      "label": "OrderUserTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "entity:Payment",
+      "label": "Payment",
+      "kind": "entity"
+    },
+    {
+      "id": "property:Payment.amount",
+      "label": "Payment.amount",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:ConstructMoney",
+      "label": "ConstructMoney",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:MissingCurrency",
+      "label": "MissingCurrency",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:PaymentAmount.success",
+      "label": "PaymentAmount.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:PaymentAmount.error",
+      "label": "PaymentAmount.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:PaymentAmountTestOracle",
+      "label": "PaymentAmountTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Payment.id",
+      "label": "Payment.id",
+      "kind": "property"
+    },
+    {
+      "id": "event:PaymentId.success",
+      "label": "PaymentId.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:PaymentIdTestOracle",
+      "label": "PaymentIdTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Payment.status",
+      "label": "Payment.status",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:SetPaymentStatus",
+      "label": "SetPaymentStatus",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteUnknownPaymentStatus",
+      "label": "RefuteUnknownPaymentStatus",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:UnknownPaymentStatus",
+      "label": "UnknownPaymentStatus",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:PaymentStatus.success",
+      "label": "PaymentStatus.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:PaymentStatus.error",
+      "label": "PaymentStatus.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:PaymentStatusTestOracle",
+      "label": "PaymentStatusTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "entity:Product",
+      "label": "Product",
+      "kind": "entity"
+    },
+    {
+      "id": "property:Product.id",
+      "label": "Product.id",
+      "kind": "property"
+    },
+    {
+      "id": "event:ProductId.success",
+      "label": "ProductId.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:ProductIdTestOracle",
+      "label": "ProductIdTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Product.name",
+      "label": "Product.name",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:NormalizeProductName",
+      "label": "NormalizeProductName",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteEmptyProductName",
+      "label": "RefuteEmptyProductName",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:EmptyProductName",
+      "label": "EmptyProductName",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:ProductName.success",
+      "label": "ProductName.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:ProductNameTestOracle",
+      "label": "ProductNameTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:Product.price",
+      "label": "Product.price",
+      "kind": "property"
+    },
+    {
+      "id": "event:ProductPrice.success",
+      "label": "ProductPrice.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:ProductPrice.error",
+      "label": "ProductPrice.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:ProductPriceTestOracle",
+      "label": "ProductPriceTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "entity:User",
+      "label": "User",
+      "kind": "entity"
+    },
+    {
+      "id": "property:User.cpf",
+      "label": "User.cpf",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:ExtractDigitsFromCPF",
+      "label": "ExtractDigitsFromCPF",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ValidateCPFLength",
+      "label": "ValidateCPFLength",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteRepeatedDigits",
+      "label": "RefuteRepeatedDigits",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ValidateCPFChecksumDigit1",
+      "label": "ValidateCPFChecksumDigit1",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ValidateCPFChecksumDigit2",
+      "label": "ValidateCPFChecksumDigit2",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ConstructUserCPF",
+      "label": "ConstructUserCPF",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:EmptyCPF",
+      "label": "EmptyCPF",
+      "kind": "refutation"
+    },
+    {
+      "id": "refutation:InsufficientDigits",
+      "label": "InsufficientDigits",
+      "kind": "refutation"
+    },
+    {
+      "id": "refutation:InvalidCPFLength",
+      "label": "InvalidCPFLength",
+      "kind": "refutation"
+    },
+    {
+      "id": "refutation:RepeatedCPFSequence",
+      "label": "RepeatedCPFSequence",
+      "kind": "refutation"
+    },
+    {
+      "id": "refutation:InvalidCPFChecksum",
+      "label": "InvalidCPFChecksum",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:UserCPF.success",
+      "label": "UserCPF.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:UserCPF.error",
+      "label": "UserCPF.error",
+      "kind": "event"
+    },
+    {
+      "id": "event:UserCPF.healed",
+      "label": "UserCPF.healed",
+      "kind": "event"
+    },
+    {
+      "id": "test:UserCPFTestOracle",
+      "label": "UserCPFTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:User.email",
+      "label": "User.email",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:NormalizeUserEmail",
+      "label": "NormalizeUserEmail",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ValidateUserEmailFormat",
+      "label": "ValidateUserEmailFormat",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ConstructUserEmail",
+      "label": "ConstructUserEmail",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:EmptyEmail",
+      "label": "EmptyEmail",
+      "kind": "refutation"
+    },
+    {
+      "id": "refutation:InvalidEmailFormat",
+      "label": "InvalidEmailFormat",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:UserEmail.success",
+      "label": "UserEmail.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:UserEmail.error",
+      "label": "UserEmail.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:UserEmailTestOracle",
+      "label": "UserEmailTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:User.id",
+      "label": "User.id",
+      "kind": "property"
+    },
+    {
+      "id": "event:UserId.success",
+      "label": "UserId.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:UserIdTestOracle",
+      "label": "UserIdTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:User.name",
+      "label": "User.name",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:NormalizeUserName",
+      "label": "NormalizeUserName",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:RefuteEmptyUserName",
+      "label": "RefuteEmptyUserName",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:EmptyUserName",
+      "label": "EmptyUserName",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:UserName.success",
+      "label": "UserName.success",
+      "kind": "event"
+    },
+    {
+      "id": "test:UserNameTestOracle",
+      "label": "UserNameTestOracle",
+      "kind": "test"
+    },
+    {
+      "id": "property:User.phone",
+      "label": "User.phone",
+      "kind": "property"
+    },
+    {
+      "id": "behavior:NormalizePhone",
+      "label": "NormalizePhone",
+      "kind": "behavior"
+    },
+    {
+      "id": "behavior:ValidatePhoneLength",
+      "label": "ValidatePhoneLength",
+      "kind": "behavior"
+    },
+    {
+      "id": "refutation:InvalidPhoneLength",
+      "label": "InvalidPhoneLength",
+      "kind": "refutation"
+    },
+    {
+      "id": "event:UserPhone.success",
+      "label": "UserPhone.success",
+      "kind": "event"
+    },
+    {
+      "id": "event:UserPhone.error",
+      "label": "UserPhone.error",
+      "kind": "event"
+    },
+    {
+      "id": "test:UserPhoneTestOracle",
+      "label": "UserPhoneTestOracle",
+      "kind": "test"
+    }
+  ],
+  "edges": [
+    {
+      "from": "entity:Order",
+      "to": "property:Order.id",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Order.id",
+      "to": "behavior:GenerateEntityId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.id",
+      "to": "behavior:RefuteEmptyId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.id",
+      "to": "refutation:EmptyId",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Order.id",
+      "to": "event:OrderId.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Order.id",
+      "to": "test:OrderIdTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Order",
+      "to": "property:Order.items",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Order.items",
+      "to": "behavior:ConstructOrderItems",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.items",
+      "to": "behavior:RefuteOrderWithoutItems",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.items",
+      "to": "refutation:OrderWithoutItems",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Order.items",
+      "to": "event:OrderItems.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Order.items",
+      "to": "event:OrderItems.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Order.items",
+      "to": "test:OrderItemsTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Order",
+      "to": "property:Order.total",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Order.total",
+      "to": "behavior:CalculateOrderTotal",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.total",
+      "to": "behavior:RefuteNegativeMoney",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.total",
+      "to": "refutation:NegativeMoney",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Order.total",
+      "to": "event:OrderTotal.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Order.total",
+      "to": "event:OrderTotal.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Order.total",
+      "to": "test:OrderTotalTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Order",
+      "to": "property:Order.user",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Order.user",
+      "to": "behavior:BindOrderToUser",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.user",
+      "to": "behavior:RefuteMissingUserRef",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Order.user",
+      "to": "refutation:MissingUserRef",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Order.user",
+      "to": "event:OrderUser.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Order.user",
+      "to": "test:OrderUserTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Payment",
+      "to": "property:Payment.amount",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "behavior:ConstructMoney",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "behavior:RefuteNegativeMoney",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "refutation:NegativeMoney",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "refutation:MissingCurrency",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "event:PaymentAmount.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "event:PaymentAmount.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Payment.amount",
+      "to": "test:PaymentAmountTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Payment",
+      "to": "property:Payment.id",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Payment.id",
+      "to": "behavior:GenerateEntityId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Payment.id",
+      "to": "behavior:RefuteEmptyId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Payment.id",
+      "to": "refutation:EmptyId",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Payment.id",
+      "to": "event:PaymentId.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Payment.id",
+      "to": "test:PaymentIdTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Payment",
+      "to": "property:Payment.status",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Payment.status",
+      "to": "behavior:SetPaymentStatus",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Payment.status",
+      "to": "behavior:RefuteUnknownPaymentStatus",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Payment.status",
+      "to": "refutation:UnknownPaymentStatus",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Payment.status",
+      "to": "event:PaymentStatus.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Payment.status",
+      "to": "event:PaymentStatus.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Payment.status",
+      "to": "test:PaymentStatusTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Product",
+      "to": "property:Product.id",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Product.id",
+      "to": "behavior:GenerateEntityId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Product.id",
+      "to": "behavior:RefuteEmptyId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Product.id",
+      "to": "refutation:EmptyId",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Product.id",
+      "to": "event:ProductId.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Product.id",
+      "to": "test:ProductIdTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Product",
+      "to": "property:Product.name",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Product.name",
+      "to": "behavior:NormalizeProductName",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Product.name",
+      "to": "behavior:RefuteEmptyProductName",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Product.name",
+      "to": "refutation:EmptyProductName",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Product.name",
+      "to": "event:ProductName.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Product.name",
+      "to": "test:ProductNameTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:Product",
+      "to": "property:Product.price",
+      "relation": "owns"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "behavior:ConstructMoney",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "behavior:RefuteNegativeMoney",
+      "relation": "uses"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "refutation:NegativeMoney",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "refutation:MissingCurrency",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "event:ProductPrice.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "event:ProductPrice.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:Product.price",
+      "to": "test:ProductPriceTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:User",
+      "to": "property:User.cpf",
+      "relation": "owns"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "behavior:ExtractDigitsFromCPF",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "behavior:ValidateCPFLength",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "behavior:RefuteRepeatedDigits",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "behavior:ValidateCPFChecksumDigit1",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "behavior:ValidateCPFChecksumDigit2",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "behavior:ConstructUserCPF",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "refutation:EmptyCPF",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "refutation:InsufficientDigits",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "refutation:InvalidCPFLength",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "refutation:RepeatedCPFSequence",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "refutation:InvalidCPFChecksum",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "event:UserCPF.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "event:UserCPF.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "event:UserCPF.healed",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.cpf",
+      "to": "test:UserCPFTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:User",
+      "to": "property:User.email",
+      "relation": "owns"
+    },
+    {
+      "from": "property:User.email",
+      "to": "behavior:NormalizeUserEmail",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.email",
+      "to": "behavior:ValidateUserEmailFormat",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.email",
+      "to": "behavior:ConstructUserEmail",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.email",
+      "to": "refutation:EmptyEmail",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.email",
+      "to": "refutation:InvalidEmailFormat",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.email",
+      "to": "event:UserEmail.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.email",
+      "to": "event:UserEmail.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.email",
+      "to": "test:UserEmailTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:User",
+      "to": "property:User.id",
+      "relation": "owns"
+    },
+    {
+      "from": "property:User.id",
+      "to": "behavior:GenerateEntityId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.id",
+      "to": "behavior:RefuteEmptyId",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.id",
+      "to": "refutation:EmptyId",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.id",
+      "to": "event:UserId.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.id",
+      "to": "test:UserIdTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:User",
+      "to": "property:User.name",
+      "relation": "owns"
+    },
+    {
+      "from": "property:User.name",
+      "to": "behavior:NormalizeUserName",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.name",
+      "to": "behavior:RefuteEmptyUserName",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.name",
+      "to": "refutation:EmptyUserName",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.name",
+      "to": "event:UserName.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.name",
+      "to": "test:UserNameTestOracle",
+      "relation": "tests"
+    },
+    {
+      "from": "entity:User",
+      "to": "property:User.phone",
+      "relation": "owns"
+    },
+    {
+      "from": "property:User.phone",
+      "to": "behavior:NormalizePhone",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.phone",
+      "to": "behavior:ValidatePhoneLength",
+      "relation": "uses"
+    },
+    {
+      "from": "property:User.phone",
+      "to": "refutation:InvalidPhoneLength",
+      "relation": "refutes"
+    },
+    {
+      "from": "property:User.phone",
+      "to": "event:UserPhone.success",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.phone",
+      "to": "event:UserPhone.error",
+      "relation": "emits"
+    },
+    {
+      "from": "property:User.phone",
+      "to": "test:UserPhoneTestOracle",
+      "relation": "tests"
+    }
+  ]
+}

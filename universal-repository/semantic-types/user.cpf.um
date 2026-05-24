@@ -1,0 +1,4 @@
+semantic_type UserCPF {
+  canonical_label "user.cpf"
+  primitive_envelope Word(Number)
+}

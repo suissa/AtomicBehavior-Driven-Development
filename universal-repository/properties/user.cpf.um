@@ -1,0 +1,5 @@
+property User.cpf {
+  canonical_label "user.cpf"
+  semantic_type UserCPF
+  primitive_envelope Word(Number)
+}

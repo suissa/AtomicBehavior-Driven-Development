@@ -1,0 +1,3 @@
+event UserEmail.success {
+  canonical_label "user.email.success"
+}

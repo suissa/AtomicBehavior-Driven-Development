@@ -1,0 +1,3 @@
+event UserCPF.error {
+  canonical_label "user.cpf.error"
+}

@@ -1,0 +1,815 @@
+{
+  "reused": [
+    {
+      "kind": "entity",
+      "canonicalName": "Order",
+      "canonicalLabel": "order",
+      "version": "1.0.0",
+      "path": "entities/order.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "OrderId",
+      "canonicalLabel": "order.id",
+      "version": "1.0.0",
+      "path": "properties/order.id.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "EntityId",
+      "canonicalLabel": "entity.id",
+      "version": "1.0.0",
+      "path": "semantic-types/entity.id.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "OrderItems",
+      "canonicalLabel": "order.items",
+      "version": "1.0.0",
+      "path": "properties/order.items.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "OrderItems",
+      "canonicalLabel": "order.items",
+      "version": "1.0.0",
+      "path": "semantic-types/order.items.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "OrderTotal",
+      "canonicalLabel": "order.total",
+      "version": "1.1.0",
+      "path": "properties/order.total.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "Money",
+      "canonicalLabel": "money",
+      "version": "1.1.0",
+      "path": "semantic-types/money.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "OrderUser",
+      "canonicalLabel": "order.user",
+      "version": "1.0.0",
+      "path": "properties/order.user.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "UserRef",
+      "canonicalLabel": "user.ref",
+      "version": "1.0.0",
+      "path": "semantic-types/user.ref.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "entity",
+      "canonicalName": "Payment",
+      "canonicalLabel": "payment",
+      "version": "1.0.0",
+      "path": "entities/payment.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "PaymentAmount",
+      "canonicalLabel": "payment.amount",
+      "version": "1.1.0",
+      "path": "properties/payment.amount.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "PaymentId",
+      "canonicalLabel": "payment.id",
+      "version": "1.0.0",
+      "path": "properties/payment.id.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "PaymentStatus",
+      "canonicalLabel": "payment.status",
+      "version": "1.0.0",
+      "path": "properties/payment.status.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "PaymentStatus",
+      "canonicalLabel": "payment.status",
+      "version": "1.0.0",
+      "path": "semantic-types/payment.status.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "entity",
+      "canonicalName": "Product",
+      "canonicalLabel": "product",
+      "version": "1.0.0",
+      "path": "entities/product.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "ProductId",
+      "canonicalLabel": "product.id",
+      "version": "1.0.0",
+      "path": "properties/product.id.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "ProductName",
+      "canonicalLabel": "product.name",
+      "version": "1.0.0",
+      "path": "properties/product.name.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "ProductName",
+      "canonicalLabel": "product.name",
+      "version": "1.0.0",
+      "path": "semantic-types/product.name.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "ProductPrice",
+      "canonicalLabel": "product.price",
+      "version": "1.1.0",
+      "path": "properties/product.price.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "entity",
+      "canonicalName": "User",
+      "canonicalLabel": "user",
+      "version": "1.0.0",
+      "path": "entities/user.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "UserCPF",
+      "canonicalLabel": "user.cpf",
+      "version": "1.2.0",
+      "path": "properties/user.cpf.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "UserCPF",
+      "canonicalLabel": "user.cpf",
+      "version": "1.2.0",
+      "path": "semantic-types/user.cpf.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "UserEmail",
+      "canonicalLabel": "user.email",
+      "version": "1.2.0",
+      "path": "properties/user.email.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "UserEmail",
+      "canonicalLabel": "user.email",
+      "version": "1.2.0",
+      "path": "semantic-types/user.email.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "UserId",
+      "canonicalLabel": "user.id",
+      "version": "1.0.0",
+      "path": "properties/user.id.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "UserName",
+      "canonicalLabel": "user.name",
+      "version": "1.0.0",
+      "path": "properties/user.name.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "UserName",
+      "canonicalLabel": "user.name",
+      "version": "1.0.0",
+      "path": "semantic-types/user.name.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "property",
+      "canonicalName": "UserPhone",
+      "canonicalLabel": "user.phone",
+      "version": "1.0.0",
+      "path": "properties/user.phone.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    },
+    {
+      "kind": "semantic-type",
+      "canonicalName": "UserPhone",
+      "canonicalLabel": "user.phone",
+      "version": "1.0.0",
+      "path": "semantic-types/user.phone.um",
+      "maturity": "stable",
+      "source": "universal-repository"
+    }
+  ],
+  "generated": [],
+  "custom": [],
+  "unresolved": [],
+  "decisions": [
+    {
+      "requested": "Order",
+      "selected": "Order",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Order",
+        "canonicalLabel": "order",
+        "version": "1.0.0",
+        "path": "entities/order.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderId",
+      "selected": "OrderId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderId",
+        "canonicalLabel": "order.id",
+        "version": "1.0.0",
+        "path": "properties/order.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderItems",
+      "selected": "OrderItems",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderItems",
+        "canonicalLabel": "order.items",
+        "version": "1.0.0",
+        "path": "properties/order.items.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderItems",
+      "selected": "OrderItems",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "OrderItems",
+        "canonicalLabel": "order.items",
+        "version": "1.0.0",
+        "path": "semantic-types/order.items.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderTotal",
+      "selected": "OrderTotal",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderTotal",
+        "canonicalLabel": "order.total",
+        "version": "1.1.0",
+        "path": "properties/order.total.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Money",
+      "selected": "Money",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "Money",
+        "canonicalLabel": "money",
+        "version": "1.1.0",
+        "path": "semantic-types/money.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderUser",
+      "selected": "OrderUser",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderUser",
+        "canonicalLabel": "order.user",
+        "version": "1.0.0",
+        "path": "properties/order.user.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserRef",
+      "selected": "UserRef",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserRef",
+        "canonicalLabel": "user.ref",
+        "version": "1.0.0",
+        "path": "semantic-types/user.ref.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Payment",
+      "selected": "Payment",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Payment",
+        "canonicalLabel": "payment",
+        "version": "1.0.0",
+        "path": "entities/payment.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentAmount",
+      "selected": "PaymentAmount",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "PaymentAmount",
+        "canonicalLabel": "payment.amount",
+        "version": "1.1.0",
+        "path": "properties/payment.amount.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Money",
+      "selected": "Money",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "Money",
+        "canonicalLabel": "money",
+        "version": "1.1.0",
+        "path": "semantic-types/money.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentId",
+      "selected": "PaymentId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "PaymentId",
+        "canonicalLabel": "payment.id",
+        "version": "1.0.0",
+        "path": "properties/payment.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentStatus",
+      "selected": "PaymentStatus",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "PaymentStatus",
+        "canonicalLabel": "payment.status",
+        "version": "1.0.0",
+        "path": "properties/payment.status.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentStatus",
+      "selected": "PaymentStatus",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "PaymentStatus",
+        "canonicalLabel": "payment.status",
+        "version": "1.0.0",
+        "path": "semantic-types/payment.status.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Product",
+      "selected": "Product",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Product",
+        "canonicalLabel": "product",
+        "version": "1.0.0",
+        "path": "entities/product.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductId",
+      "selected": "ProductId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "ProductId",
+        "canonicalLabel": "product.id",
+        "version": "1.0.0",
+        "path": "properties/product.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductName",
+      "selected": "ProductName",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "ProductName",
+        "canonicalLabel": "product.name",
+        "version": "1.0.0",
+        "path": "properties/product.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductName",
+      "selected": "ProductName",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "ProductName",
+        "canonicalLabel": "product.name",
+        "version": "1.0.0",
+        "path": "semantic-types/product.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductPrice",
+      "selected": "ProductPrice",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "ProductPrice",
+        "canonicalLabel": "product.price",
+        "version": "1.1.0",
+        "path": "properties/product.price.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Money",
+      "selected": "Money",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "Money",
+        "canonicalLabel": "money",
+        "version": "1.1.0",
+        "path": "semantic-types/money.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "User",
+      "selected": "User",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "User",
+        "canonicalLabel": "user",
+        "version": "1.0.0",
+        "path": "entities/user.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserCPF",
+      "selected": "UserCPF",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserCPF",
+        "canonicalLabel": "user.cpf",
+        "version": "1.2.0",
+        "path": "properties/user.cpf.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserCPF",
+      "selected": "UserCPF",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserCPF",
+        "canonicalLabel": "user.cpf",
+        "version": "1.2.0",
+        "path": "semantic-types/user.cpf.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserEmail",
+      "selected": "UserEmail",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserEmail",
+        "canonicalLabel": "user.email",
+        "version": "1.2.0",
+        "path": "properties/user.email.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserEmail",
+      "selected": "UserEmail",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserEmail",
+        "canonicalLabel": "user.email",
+        "version": "1.2.0",
+        "path": "semantic-types/user.email.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserId",
+      "selected": "UserId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserId",
+        "canonicalLabel": "user.id",
+        "version": "1.0.0",
+        "path": "properties/user.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserName",
+      "selected": "UserName",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserName",
+        "canonicalLabel": "user.name",
+        "version": "1.0.0",
+        "path": "properties/user.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserName",
+      "selected": "UserName",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserName",
+        "canonicalLabel": "user.name",
+        "version": "1.0.0",
+        "path": "semantic-types/user.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserPhone",
+      "selected": "UserPhone",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserPhone",
+        "canonicalLabel": "user.phone",
+        "version": "1.0.0",
+        "path": "properties/user.phone.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserPhone",
+      "selected": "UserPhone",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserPhone",
+        "canonicalLabel": "user.phone",
+        "version": "1.0.0",
+        "path": "semantic-types/user.phone.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    }
+  ],
+  "updatedAt": "2026-05-24T06:16:35.237Z"
+}

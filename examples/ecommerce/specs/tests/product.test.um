@@ -1,0 +1,19 @@
+test Product {
+  target entity Product
+
+  property id {
+    positive valid_uuid
+    negative empty_id expects EmptyId
+  }
+
+  property name {
+    positive valid_product_name
+    negative empty_product_name expects EmptyProductName
+  }
+
+  property price {
+    positive valid_money
+    negative negative_money expects NegativeMoney
+    negative missing_currency expects MissingCurrency
+  }
+}

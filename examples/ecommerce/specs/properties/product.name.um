@@ -1,0 +1,16 @@
+property Product.name {
+  canonical_label "product.name"
+  semantic_type ProductName
+  primitive_envelope Word
+
+  required true
+
+  normalizer NormalizeProductName
+  validator RefuteEmptyProductName
+
+  refutation EmptyProductName
+
+  event ProductName.success
+
+  test_oracle ProductNameTestOracle
+}

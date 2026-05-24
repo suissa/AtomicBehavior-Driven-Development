@@ -1,0 +1,17 @@
+property Payment.id {
+  canonical_label "payment.id"
+  semantic_type EntityId
+  primitive_envelope UUID
+
+  required true
+
+  // no normalizer declared
+  validator GenerateEntityId
+  validator RefuteEmptyId
+
+  refutation EmptyId
+
+  event PaymentId.success
+
+  test_oracle PaymentIdTestOracle
+}

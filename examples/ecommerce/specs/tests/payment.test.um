@@ -1,0 +1,19 @@
+test Payment {
+  target entity Payment
+
+  property amount {
+    positive valid_money
+    negative negative_money expects NegativeMoney
+    negative missing_currency expects MissingCurrency
+  }
+
+  property id {
+    positive valid_uuid
+    negative empty_id expects EmptyId
+  }
+
+  property status {
+    positive valid_payment_status
+    negative unknown_payment_status expects UnknownPaymentStatus
+  }
+}

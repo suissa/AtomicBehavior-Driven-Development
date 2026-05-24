@@ -1,0 +1,17 @@
+property Order.user {
+  canonical_label "order.user"
+  semantic_type UserRef
+  primitive_envelope UUID
+
+  required true
+
+  // no normalizer declared
+  validator BindOrderToUser
+  validator RefuteMissingUserRef
+
+  refutation MissingUserRef
+
+  event OrderUser.success
+
+  test_oracle OrderUserTestOracle
+}

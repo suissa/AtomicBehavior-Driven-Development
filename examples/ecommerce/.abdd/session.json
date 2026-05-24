@@ -1,0 +1,1952 @@
+{
+  "id": "session-mpjdwvs0-weqc56",
+  "projectName": "examples\\ecommerce",
+  "domain": "commerce",
+  "systemType": "ecommerce",
+  "problemStatement": "Ecommerce system generated from semantic ABDD entities.",
+  "entities": [
+    {
+      "name": "Order",
+      "canonicalLabel": "order",
+      "description": "A purchase intent converted into a transactional record.",
+      "properties": [
+        {
+          "entityName": "Order",
+          "name": "id",
+          "canonicalLabel": "order.id",
+          "semanticType": "EntityId",
+          "primitiveEnvelope": "UUID",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "GenerateEntityId",
+              "canonicalLabel": "generate.entity.id",
+              "behaviorType": "unknown",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteEmptyId",
+              "canonicalLabel": "refute.empty.id",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyId",
+              "canonicalLabel": "empty.id",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "OrderId.success",
+              "canonicalLabel": "orderid.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "OrderIdTestOracle",
+              "canonicalLabel": "order.id.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_uuid",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_id",
+                  "kind": "negative",
+                  "expects": "EmptyId"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "OrderIdTestOracle",
+                "canonicalLabel": "order.id.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/order.id.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "OrderId",
+            "canonicalLabel": "order.id",
+            "version": "1.0.0",
+            "path": "properties/order.id.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Order",
+          "name": "items",
+          "canonicalLabel": "order.items",
+          "semanticType": "OrderItems",
+          "primitiveEnvelope": "Word",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "ConstructOrderItems",
+              "canonicalLabel": "construct.order.items",
+              "behaviorType": "constructor",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteOrderWithoutItems",
+              "canonicalLabel": "refute.order.without.items",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "OrderWithoutItems",
+              "canonicalLabel": "order.without.items",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "OrderItems.success",
+              "canonicalLabel": "orderitems.success",
+              "source": "reused"
+            },
+            {
+              "name": "OrderItems.error",
+              "canonicalLabel": "orderitems.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "OrderItemsTestOracle",
+              "canonicalLabel": "order.items.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_order_items",
+                  "kind": "positive"
+                },
+                {
+                  "name": "order_without_items",
+                  "kind": "negative",
+                  "expects": "OrderWithoutItems"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "OrderItemsTestOracle",
+                "canonicalLabel": "order.items.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/order.items.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "OrderItems",
+            "canonicalLabel": "order.items",
+            "version": "1.0.0",
+            "path": "properties/order.items.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Order",
+          "name": "total",
+          "canonicalLabel": "order.total",
+          "semanticType": "Money",
+          "primitiveEnvelope": "Money",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "CalculateOrderTotal",
+              "canonicalLabel": "calculate.order.total",
+              "behaviorType": "unknown",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteNegativeMoney",
+              "canonicalLabel": "refute.negative.money",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "NegativeMoney",
+              "canonicalLabel": "negative.money",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "OrderTotal.success",
+              "canonicalLabel": "ordertotal.success",
+              "source": "reused"
+            },
+            {
+              "name": "OrderTotal.error",
+              "canonicalLabel": "ordertotal.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "OrderTotalTestOracle",
+              "canonicalLabel": "order.total.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_order_total",
+                  "kind": "positive"
+                },
+                {
+                  "name": "negative_money",
+                  "kind": "negative",
+                  "expects": "NegativeMoney"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "OrderTotalTestOracle",
+                "canonicalLabel": "order.total.test.oracle",
+                "version": "1.1.0",
+                "path": "tests/order.total.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "OrderTotal",
+            "canonicalLabel": "order.total",
+            "version": "1.1.0",
+            "path": "properties/order.total.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Order",
+          "name": "user",
+          "canonicalLabel": "order.user",
+          "semanticType": "UserRef",
+          "primitiveEnvelope": "UUID",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "BindOrderToUser",
+              "canonicalLabel": "bind.order.to.user",
+              "behaviorType": "binder",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteMissingUserRef",
+              "canonicalLabel": "refute.missing.user.ref",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "MissingUserRef",
+              "canonicalLabel": "missing.user.ref",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "OrderUser.success",
+              "canonicalLabel": "orderuser.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "OrderUserTestOracle",
+              "canonicalLabel": "order.user.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_user_ref",
+                  "kind": "positive"
+                },
+                {
+                  "name": "missing_user_ref",
+                  "kind": "negative",
+                  "expects": "MissingUserRef"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "OrderUserTestOracle",
+                "canonicalLabel": "order.user.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/order.user.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "OrderUser",
+            "canonicalLabel": "order.user",
+            "version": "1.0.0",
+            "path": "properties/order.user.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "CreateOrder",
+          "canonicalLabel": "create.order",
+          "behaviorType": "constructor",
+          "source": "reused"
+        },
+        {
+          "name": "CalculateOrderTotal",
+          "canonicalLabel": "calculate.order.total",
+          "behaviorType": "unknown",
+          "source": "reused"
+        },
+        {
+          "name": "BindOrderToUser",
+          "canonicalLabel": "bind.order.to.user",
+          "behaviorType": "binder",
+          "source": "reused"
+        }
+      ],
+      "source": "reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Order",
+        "canonicalLabel": "order",
+        "version": "1.0.0",
+        "path": "entities/order.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "name": "Payment",
+      "canonicalLabel": "payment",
+      "description": "A financial settlement attempt for an order.",
+      "properties": [
+        {
+          "entityName": "Payment",
+          "name": "amount",
+          "canonicalLabel": "payment.amount",
+          "semanticType": "Money",
+          "primitiveEnvelope": "Money",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "ConstructMoney",
+              "canonicalLabel": "construct.money",
+              "behaviorType": "constructor",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteNegativeMoney",
+              "canonicalLabel": "refute.negative.money",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "NegativeMoney",
+              "canonicalLabel": "negative.money",
+              "source": "reused"
+            },
+            {
+              "name": "MissingCurrency",
+              "canonicalLabel": "missing.currency",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "PaymentAmount.success",
+              "canonicalLabel": "paymentamount.success",
+              "source": "reused"
+            },
+            {
+              "name": "PaymentAmount.error",
+              "canonicalLabel": "paymentamount.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "PaymentAmountTestOracle",
+              "canonicalLabel": "payment.amount.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_money",
+                  "kind": "positive"
+                },
+                {
+                  "name": "negative_money",
+                  "kind": "negative",
+                  "expects": "NegativeMoney"
+                },
+                {
+                  "name": "missing_currency",
+                  "kind": "negative",
+                  "expects": "MissingCurrency"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "PaymentAmountTestOracle",
+                "canonicalLabel": "payment.amount.test.oracle",
+                "version": "1.1.0",
+                "path": "tests/payment.amount.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "PaymentAmount",
+            "canonicalLabel": "payment.amount",
+            "version": "1.1.0",
+            "path": "properties/payment.amount.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Payment",
+          "name": "id",
+          "canonicalLabel": "payment.id",
+          "semanticType": "EntityId",
+          "primitiveEnvelope": "UUID",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "GenerateEntityId",
+              "canonicalLabel": "generate.entity.id",
+              "behaviorType": "unknown",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteEmptyId",
+              "canonicalLabel": "refute.empty.id",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyId",
+              "canonicalLabel": "empty.id",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "PaymentId.success",
+              "canonicalLabel": "paymentid.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "PaymentIdTestOracle",
+              "canonicalLabel": "payment.id.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_uuid",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_id",
+                  "kind": "negative",
+                  "expects": "EmptyId"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "PaymentIdTestOracle",
+                "canonicalLabel": "payment.id.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/payment.id.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "PaymentId",
+            "canonicalLabel": "payment.id",
+            "version": "1.0.0",
+            "path": "properties/payment.id.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Payment",
+          "name": "status",
+          "canonicalLabel": "payment.status",
+          "semanticType": "PaymentStatus",
+          "primitiveEnvelope": "Word",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "SetPaymentStatus",
+              "canonicalLabel": "set.payment.status",
+              "behaviorType": "unknown",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteUnknownPaymentStatus",
+              "canonicalLabel": "refute.unknown.payment.status",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "UnknownPaymentStatus",
+              "canonicalLabel": "unknown.payment.status",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "PaymentStatus.success",
+              "canonicalLabel": "paymentstatus.success",
+              "source": "reused"
+            },
+            {
+              "name": "PaymentStatus.error",
+              "canonicalLabel": "paymentstatus.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "PaymentStatusTestOracle",
+              "canonicalLabel": "payment.status.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_payment_status",
+                  "kind": "positive"
+                },
+                {
+                  "name": "unknown_payment_status",
+                  "kind": "negative",
+                  "expects": "UnknownPaymentStatus"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "PaymentStatusTestOracle",
+                "canonicalLabel": "payment.status.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/payment.status.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "PaymentStatus",
+            "canonicalLabel": "payment.status",
+            "version": "1.0.0",
+            "path": "properties/payment.status.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "CreatePayment",
+          "canonicalLabel": "create.payment",
+          "behaviorType": "constructor",
+          "source": "reused"
+        },
+        {
+          "name": "AuthorizePayment",
+          "canonicalLabel": "authorize.payment",
+          "behaviorType": "unknown",
+          "source": "reused"
+        },
+        {
+          "name": "SetPaymentStatus",
+          "canonicalLabel": "set.payment.status",
+          "behaviorType": "unknown",
+          "source": "reused"
+        }
+      ],
+      "source": "reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Payment",
+        "canonicalLabel": "payment",
+        "version": "1.0.0",
+        "path": "entities/payment.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "name": "Product",
+      "canonicalLabel": "product",
+      "description": "A sellable catalog item.",
+      "properties": [
+        {
+          "entityName": "Product",
+          "name": "id",
+          "canonicalLabel": "product.id",
+          "semanticType": "EntityId",
+          "primitiveEnvelope": "UUID",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "GenerateEntityId",
+              "canonicalLabel": "generate.entity.id",
+              "behaviorType": "unknown",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteEmptyId",
+              "canonicalLabel": "refute.empty.id",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyId",
+              "canonicalLabel": "empty.id",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "ProductId.success",
+              "canonicalLabel": "productid.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "ProductIdTestOracle",
+              "canonicalLabel": "product.id.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_uuid",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_id",
+                  "kind": "negative",
+                  "expects": "EmptyId"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "ProductIdTestOracle",
+                "canonicalLabel": "product.id.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/product.id.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "ProductId",
+            "canonicalLabel": "product.id",
+            "version": "1.0.0",
+            "path": "properties/product.id.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Product",
+          "name": "name",
+          "canonicalLabel": "product.name",
+          "semanticType": "ProductName",
+          "primitiveEnvelope": "Word",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "NormalizeProductName",
+              "canonicalLabel": "normalize.product.name",
+              "behaviorType": "normalizer",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteEmptyProductName",
+              "canonicalLabel": "refute.empty.product.name",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyProductName",
+              "canonicalLabel": "empty.product.name",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "ProductName.success",
+              "canonicalLabel": "productname.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "ProductNameTestOracle",
+              "canonicalLabel": "product.name.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_product_name",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_product_name",
+                  "kind": "negative",
+                  "expects": "EmptyProductName"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "ProductNameTestOracle",
+                "canonicalLabel": "product.name.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/product.name.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "ProductName",
+            "canonicalLabel": "product.name",
+            "version": "1.0.0",
+            "path": "properties/product.name.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "Product",
+          "name": "price",
+          "canonicalLabel": "product.price",
+          "semanticType": "Money",
+          "primitiveEnvelope": "Money",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "ConstructMoney",
+              "canonicalLabel": "construct.money",
+              "behaviorType": "constructor",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteNegativeMoney",
+              "canonicalLabel": "refute.negative.money",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "NegativeMoney",
+              "canonicalLabel": "negative.money",
+              "source": "reused"
+            },
+            {
+              "name": "MissingCurrency",
+              "canonicalLabel": "missing.currency",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "ProductPrice.success",
+              "canonicalLabel": "productprice.success",
+              "source": "reused"
+            },
+            {
+              "name": "ProductPrice.error",
+              "canonicalLabel": "productprice.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "ProductPriceTestOracle",
+              "canonicalLabel": "product.price.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_money",
+                  "kind": "positive"
+                },
+                {
+                  "name": "negative_money",
+                  "kind": "negative",
+                  "expects": "NegativeMoney"
+                },
+                {
+                  "name": "missing_currency",
+                  "kind": "negative",
+                  "expects": "MissingCurrency"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "ProductPriceTestOracle",
+                "canonicalLabel": "product.price.test.oracle",
+                "version": "1.1.0",
+                "path": "tests/product.price.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "ProductPrice",
+            "canonicalLabel": "product.price",
+            "version": "1.1.0",
+            "path": "properties/product.price.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "CreateProduct",
+          "canonicalLabel": "create.product",
+          "behaviorType": "constructor",
+          "source": "reused"
+        },
+        {
+          "name": "PriceProduct",
+          "canonicalLabel": "price.product",
+          "behaviorType": "unknown",
+          "source": "reused"
+        }
+      ],
+      "source": "reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Product",
+        "canonicalLabel": "product",
+        "version": "1.0.0",
+        "path": "entities/product.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "name": "User",
+      "canonicalLabel": "user",
+      "description": "A person or account that interacts with the system.",
+      "properties": [
+        {
+          "entityName": "User",
+          "name": "cpf",
+          "canonicalLabel": "user.cpf",
+          "semanticType": "UserCPF",
+          "primitiveEnvelope": "Word(Number)",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "ExtractDigitsFromCPF",
+              "canonicalLabel": "extract.digits.from.cpf",
+              "behaviorType": "normalizer",
+              "source": "reused"
+            },
+            {
+              "name": "ValidateCPFLength",
+              "canonicalLabel": "validate.cpflength",
+              "behaviorType": "validator",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteRepeatedDigits",
+              "canonicalLabel": "refute.repeated.digits",
+              "behaviorType": "validator",
+              "source": "reused"
+            },
+            {
+              "name": "ValidateCPFChecksumDigit1",
+              "canonicalLabel": "validate.cpfchecksum.digit1",
+              "behaviorType": "validator",
+              "source": "reused"
+            },
+            {
+              "name": "ValidateCPFChecksumDigit2",
+              "canonicalLabel": "validate.cpfchecksum.digit2",
+              "behaviorType": "validator",
+              "source": "reused"
+            },
+            {
+              "name": "ConstructUserCPF",
+              "canonicalLabel": "construct.user.cpf",
+              "behaviorType": "constructor",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyCPF",
+              "canonicalLabel": "empty.cpf",
+              "source": "reused"
+            },
+            {
+              "name": "InsufficientDigits",
+              "canonicalLabel": "insufficient.digits",
+              "source": "reused"
+            },
+            {
+              "name": "InvalidCPFLength",
+              "canonicalLabel": "invalid.cpflength",
+              "source": "reused"
+            },
+            {
+              "name": "RepeatedCPFSequence",
+              "canonicalLabel": "repeated.cpfsequence",
+              "source": "reused"
+            },
+            {
+              "name": "InvalidCPFChecksum",
+              "canonicalLabel": "invalid.cpfchecksum",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "UserCPF.success",
+              "canonicalLabel": "usercpf.success",
+              "source": "reused"
+            },
+            {
+              "name": "UserCPF.error",
+              "canonicalLabel": "usercpf.error",
+              "source": "reused"
+            },
+            {
+              "name": "UserCPF.healed",
+              "canonicalLabel": "usercpf.healed",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "UserCPFTestOracle",
+              "canonicalLabel": "user.cpftest.oracle",
+              "cases": [
+                {
+                  "name": "valid_cpf",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_cpf",
+                  "kind": "negative",
+                  "expects": "EmptyCPF"
+                },
+                {
+                  "name": "insufficient_digits",
+                  "kind": "negative",
+                  "expects": "InsufficientDigits"
+                },
+                {
+                  "name": "invalid_cpf_length",
+                  "kind": "negative",
+                  "expects": "InvalidCPFLength"
+                },
+                {
+                  "name": "repeated_digits",
+                  "kind": "negative",
+                  "expects": "RepeatedCPFSequence"
+                },
+                {
+                  "name": "invalid_checksum",
+                  "kind": "negative",
+                  "expects": "InvalidCPFChecksum"
+                },
+                {
+                  "name": "removable_non_digits",
+                  "kind": "healing",
+                  "expects": "UserCPF.healed"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "UserCPFTestOracle",
+                "canonicalLabel": "user.cpftest.oracle",
+                "version": "1.2.0",
+                "path": "tests/user.cpf.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "UserCPF",
+            "canonicalLabel": "user.cpf",
+            "version": "1.2.0",
+            "path": "properties/user.cpf.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "User",
+          "name": "email",
+          "canonicalLabel": "user.email",
+          "semanticType": "UserEmail",
+          "primitiveEnvelope": "Word(Email)",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "NormalizeUserEmail",
+              "canonicalLabel": "normalize.user.email",
+              "behaviorType": "normalizer",
+              "source": "reused"
+            },
+            {
+              "name": "ValidateUserEmailFormat",
+              "canonicalLabel": "validate.user.email.format",
+              "behaviorType": "validator",
+              "source": "reused"
+            },
+            {
+              "name": "ConstructUserEmail",
+              "canonicalLabel": "construct.user.email",
+              "behaviorType": "constructor",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyEmail",
+              "canonicalLabel": "empty.email",
+              "source": "reused"
+            },
+            {
+              "name": "InvalidEmailFormat",
+              "canonicalLabel": "invalid.email.format",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "UserEmail.success",
+              "canonicalLabel": "useremail.success",
+              "source": "reused"
+            },
+            {
+              "name": "UserEmail.error",
+              "canonicalLabel": "useremail.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "UserEmailTestOracle",
+              "canonicalLabel": "user.email.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_email",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_email",
+                  "kind": "negative",
+                  "expects": "EmptyEmail"
+                },
+                {
+                  "name": "invalid_email_format",
+                  "kind": "negative",
+                  "expects": "InvalidEmailFormat"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "UserEmailTestOracle",
+                "canonicalLabel": "user.email.test.oracle",
+                "version": "1.2.0",
+                "path": "tests/user.email.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "UserEmail",
+            "canonicalLabel": "user.email",
+            "version": "1.2.0",
+            "path": "properties/user.email.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "User",
+          "name": "id",
+          "canonicalLabel": "user.id",
+          "semanticType": "EntityId",
+          "primitiveEnvelope": "UUID",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "GenerateEntityId",
+              "canonicalLabel": "generate.entity.id",
+              "behaviorType": "unknown",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteEmptyId",
+              "canonicalLabel": "refute.empty.id",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyId",
+              "canonicalLabel": "empty.id",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "UserId.success",
+              "canonicalLabel": "userid.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "UserIdTestOracle",
+              "canonicalLabel": "user.id.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_uuid",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_id",
+                  "kind": "negative",
+                  "expects": "EmptyId"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "UserIdTestOracle",
+                "canonicalLabel": "user.id.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/user.id.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "UserId",
+            "canonicalLabel": "user.id",
+            "version": "1.0.0",
+            "path": "properties/user.id.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "User",
+          "name": "name",
+          "canonicalLabel": "user.name",
+          "semanticType": "UserName",
+          "primitiveEnvelope": "Word",
+          "required": true,
+          "behaviors": [
+            {
+              "name": "NormalizeUserName",
+              "canonicalLabel": "normalize.user.name",
+              "behaviorType": "normalizer",
+              "source": "reused"
+            },
+            {
+              "name": "RefuteEmptyUserName",
+              "canonicalLabel": "refute.empty.user.name",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "EmptyUserName",
+              "canonicalLabel": "empty.user.name",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "UserName.success",
+              "canonicalLabel": "username.success",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "UserNameTestOracle",
+              "canonicalLabel": "user.name.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_user_name",
+                  "kind": "positive"
+                },
+                {
+                  "name": "empty_user_name",
+                  "kind": "negative",
+                  "expects": "EmptyUserName"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "UserNameTestOracle",
+                "canonicalLabel": "user.name.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/user.name.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "UserName",
+            "canonicalLabel": "user.name",
+            "version": "1.0.0",
+            "path": "properties/user.name.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        },
+        {
+          "entityName": "User",
+          "name": "phone",
+          "canonicalLabel": "user.phone",
+          "semanticType": "UserPhone",
+          "primitiveEnvelope": "Word(Number)",
+          "required": false,
+          "behaviors": [
+            {
+              "name": "NormalizePhone",
+              "canonicalLabel": "normalize.phone",
+              "behaviorType": "normalizer",
+              "source": "reused"
+            },
+            {
+              "name": "ValidatePhoneLength",
+              "canonicalLabel": "validate.phone.length",
+              "behaviorType": "validator",
+              "source": "reused"
+            }
+          ],
+          "refutations": [
+            {
+              "name": "InvalidPhoneLength",
+              "canonicalLabel": "invalid.phone.length",
+              "source": "reused"
+            }
+          ],
+          "events": [
+            {
+              "name": "UserPhone.success",
+              "canonicalLabel": "userphone.success",
+              "source": "reused"
+            },
+            {
+              "name": "UserPhone.error",
+              "canonicalLabel": "userphone.error",
+              "source": "reused"
+            }
+          ],
+          "tests": [
+            {
+              "name": "UserPhoneTestOracle",
+              "canonicalLabel": "user.phone.test.oracle",
+              "cases": [
+                {
+                  "name": "valid_phone",
+                  "kind": "positive"
+                },
+                {
+                  "name": "invalid_phone_length",
+                  "kind": "negative",
+                  "expects": "InvalidPhoneLength"
+                }
+              ],
+              "source": "reused",
+              "artifactRef": {
+                "kind": "test",
+                "canonicalName": "UserPhoneTestOracle",
+                "canonicalLabel": "user.phone.test.oracle",
+                "version": "1.0.0",
+                "path": "tests/user.phone.test.um",
+                "maturity": "stable",
+                "source": "universal-repository"
+              }
+            }
+          ],
+          "source": "reused",
+          "artifactRef": {
+            "kind": "property",
+            "canonicalName": "UserPhone",
+            "canonicalLabel": "user.phone",
+            "version": "1.0.0",
+            "path": "properties/user.phone.um",
+            "maturity": "stable",
+            "source": "universal-repository"
+          }
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "CreateUser",
+          "canonicalLabel": "create.user",
+          "behaviorType": "constructor",
+          "source": "reused"
+        },
+        {
+          "name": "ValidateUserIdentity",
+          "canonicalLabel": "validate.user.identity",
+          "behaviorType": "validator",
+          "source": "reused"
+        },
+        {
+          "name": "BindUserCPFToUserIdentity",
+          "canonicalLabel": "bind.user.cpfto.user.identity",
+          "behaviorType": "binder",
+          "source": "reused"
+        }
+      ],
+      "source": "reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "User",
+        "canonicalLabel": "user",
+        "version": "1.0.0",
+        "path": "entities/user.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "requested": "Order",
+      "selected": "Order",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Order",
+        "canonicalLabel": "order",
+        "version": "1.0.0",
+        "path": "entities/order.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderId",
+      "selected": "OrderId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderId",
+        "canonicalLabel": "order.id",
+        "version": "1.0.0",
+        "path": "properties/order.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderItems",
+      "selected": "OrderItems",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderItems",
+        "canonicalLabel": "order.items",
+        "version": "1.0.0",
+        "path": "properties/order.items.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderItems",
+      "selected": "OrderItems",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "OrderItems",
+        "canonicalLabel": "order.items",
+        "version": "1.0.0",
+        "path": "semantic-types/order.items.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderTotal",
+      "selected": "OrderTotal",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderTotal",
+        "canonicalLabel": "order.total",
+        "version": "1.1.0",
+        "path": "properties/order.total.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Money",
+      "selected": "Money",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "Money",
+        "canonicalLabel": "money",
+        "version": "1.1.0",
+        "path": "semantic-types/money.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "OrderUser",
+      "selected": "OrderUser",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "OrderUser",
+        "canonicalLabel": "order.user",
+        "version": "1.0.0",
+        "path": "properties/order.user.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserRef",
+      "selected": "UserRef",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserRef",
+        "canonicalLabel": "user.ref",
+        "version": "1.0.0",
+        "path": "semantic-types/user.ref.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Payment",
+      "selected": "Payment",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Payment",
+        "canonicalLabel": "payment",
+        "version": "1.0.0",
+        "path": "entities/payment.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentAmount",
+      "selected": "PaymentAmount",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "PaymentAmount",
+        "canonicalLabel": "payment.amount",
+        "version": "1.1.0",
+        "path": "properties/payment.amount.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Money",
+      "selected": "Money",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "Money",
+        "canonicalLabel": "money",
+        "version": "1.1.0",
+        "path": "semantic-types/money.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentId",
+      "selected": "PaymentId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "PaymentId",
+        "canonicalLabel": "payment.id",
+        "version": "1.0.0",
+        "path": "properties/payment.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentStatus",
+      "selected": "PaymentStatus",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "PaymentStatus",
+        "canonicalLabel": "payment.status",
+        "version": "1.0.0",
+        "path": "properties/payment.status.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "PaymentStatus",
+      "selected": "PaymentStatus",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "PaymentStatus",
+        "canonicalLabel": "payment.status",
+        "version": "1.0.0",
+        "path": "semantic-types/payment.status.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Product",
+      "selected": "Product",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "Product",
+        "canonicalLabel": "product",
+        "version": "1.0.0",
+        "path": "entities/product.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductId",
+      "selected": "ProductId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "ProductId",
+        "canonicalLabel": "product.id",
+        "version": "1.0.0",
+        "path": "properties/product.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductName",
+      "selected": "ProductName",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "ProductName",
+        "canonicalLabel": "product.name",
+        "version": "1.0.0",
+        "path": "properties/product.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductName",
+      "selected": "ProductName",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "ProductName",
+        "canonicalLabel": "product.name",
+        "version": "1.0.0",
+        "path": "semantic-types/product.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "ProductPrice",
+      "selected": "ProductPrice",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "ProductPrice",
+        "canonicalLabel": "product.price",
+        "version": "1.1.0",
+        "path": "properties/product.price.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "Money",
+      "selected": "Money",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "Money",
+        "canonicalLabel": "money",
+        "version": "1.1.0",
+        "path": "semantic-types/money.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "User",
+      "selected": "User",
+      "kind": "entity",
+      "decision": "reused",
+      "reason": "recommended entity reused",
+      "artifactRef": {
+        "kind": "entity",
+        "canonicalName": "User",
+        "canonicalLabel": "user",
+        "version": "1.0.0",
+        "path": "entities/user.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserCPF",
+      "selected": "UserCPF",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserCPF",
+        "canonicalLabel": "user.cpf",
+        "version": "1.2.0",
+        "path": "properties/user.cpf.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserCPF",
+      "selected": "UserCPF",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserCPF",
+        "canonicalLabel": "user.cpf",
+        "version": "1.2.0",
+        "path": "semantic-types/user.cpf.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserEmail",
+      "selected": "UserEmail",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserEmail",
+        "canonicalLabel": "user.email",
+        "version": "1.2.0",
+        "path": "properties/user.email.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserEmail",
+      "selected": "UserEmail",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserEmail",
+        "canonicalLabel": "user.email",
+        "version": "1.2.0",
+        "path": "semantic-types/user.email.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserId",
+      "selected": "UserId",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserId",
+        "canonicalLabel": "user.id",
+        "version": "1.0.0",
+        "path": "properties/user.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "EntityId",
+      "selected": "EntityId",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "EntityId",
+        "canonicalLabel": "entity.id",
+        "version": "1.0.0",
+        "path": "semantic-types/entity.id.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserName",
+      "selected": "UserName",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserName",
+        "canonicalLabel": "user.name",
+        "version": "1.0.0",
+        "path": "properties/user.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserName",
+      "selected": "UserName",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserName",
+        "canonicalLabel": "user.name",
+        "version": "1.0.0",
+        "path": "semantic-types/user.name.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserPhone",
+      "selected": "UserPhone",
+      "kind": "property",
+      "decision": "reused",
+      "reason": "recommended property reused",
+      "artifactRef": {
+        "kind": "property",
+        "canonicalName": "UserPhone",
+        "canonicalLabel": "user.phone",
+        "version": "1.0.0",
+        "path": "properties/user.phone.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    },
+    {
+      "requested": "UserPhone",
+      "selected": "UserPhone",
+      "kind": "semantic-type",
+      "decision": "reused",
+      "reason": "semantic type reused",
+      "artifactRef": {
+        "kind": "semantic-type",
+        "canonicalName": "UserPhone",
+        "canonicalLabel": "user.phone",
+        "version": "1.0.0",
+        "path": "semantic-types/user.phone.um",
+        "maturity": "stable",
+        "source": "universal-repository"
+      }
+    }
+  ],
+  "createdAt": "2026-05-24T06:16:35.036Z",
+  "updatedAt": "2026-05-24T06:16:49.359Z",
+  "mode": {
+    "kind": "beginner",
+    "language": "TypeScript",
+    "frontend": "NextJS",
+    "backend": "NestJS",
+    "database": "PostgreSQL",
+    "architecture": "modular-monolith"
+  }
+}

@@ -1,0 +1,20 @@
+entity Order {
+  canonical_label "order"
+  domain "commerce"
+
+  property id uses EntityId
+  property items uses OrderItems
+  property total uses Money
+  property user uses UserRef
+
+  behavior CreateOrder
+  behavior CalculateOrderTotal
+  behavior BindOrderToUser
+
+  emits OrderId.success
+  emits OrderItems.success
+  emits OrderItems.error
+  emits OrderTotal.success
+  emits OrderTotal.error
+  emits OrderUser.success
+}

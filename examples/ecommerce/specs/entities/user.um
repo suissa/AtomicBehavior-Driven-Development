@@ -1,0 +1,24 @@
+entity User {
+  canonical_label "user"
+  domain "commerce"
+
+  property cpf uses UserCPF
+  property email uses UserEmail
+  property id uses EntityId
+  property name uses UserName
+  property phone uses UserPhone
+
+  behavior CreateUser
+  behavior ValidateUserIdentity
+  behavior BindUserCPFToUserIdentity
+
+  emits UserCPF.success
+  emits UserCPF.error
+  emits UserCPF.healed
+  emits UserEmail.success
+  emits UserEmail.error
+  emits UserId.success
+  emits UserName.success
+  emits UserPhone.success
+  emits UserPhone.error
+}

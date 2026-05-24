@@ -1,0 +1,4 @@
+semantic_type UserEmail {
+  canonical_label "user.email"
+  primitive_envelope Word(Email)
+}

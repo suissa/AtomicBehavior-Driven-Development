@@ -1,0 +1,18 @@
+entity Payment {
+  canonical_label "payment"
+  domain "commerce"
+
+  property amount uses Money
+  property id uses EntityId
+  property status uses PaymentStatus
+
+  behavior CreatePayment
+  behavior AuthorizePayment
+  behavior SetPaymentStatus
+
+  emits PaymentAmount.success
+  emits PaymentAmount.error
+  emits PaymentId.success
+  emits PaymentStatus.success
+  emits PaymentStatus.error
+}
